@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {  getDownloadURL, listAll,ref } from "firebase/storage";
 import { storage } from "../Firebase/firebase";
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import styled from "styled-components";
 import { readUserData } from "../Firebase/Database";
+import {  ref,getDatabase, onValue} from "firebase/database";
+const db = getDatabase();
 
-const imagesListRef = ref(storage, "images/");
-let data =readUserData();
 
 const PhotoGrid = styled.div`
   display: flex;
@@ -20,71 +19,48 @@ const Frame = styled.div`
   display: flex;
   flex-direction: row;
   margin: 20px;
-  height: 250px;
+  height: 300px;
   box-shadow: 0 3px 10px;
   border-radius: 35px;
   border: 2px;
 `;
+const Title =styled.div`
+text-align: center ;
+`;
 
 function Product() {
- 
-  const [imageUrls, setImageUrls] = useState([]);
-  // const [data,setData] = useState({desc:""})
 
-    useEffect(() => {
-      setImageUrls([])
-      listAll(imagesListRef).then((response) => {
-        response.items.forEach((item) => {
-          getDownloadURL(item).then((url) => {
-            setImageUrls((prev) => [...prev, url]);
-
-          });
+  const [product, setProduct] = useState("");
+//Read From database
+  useEffect(() => {
+    onValue(ref(db), (snapshot) => {
+      setProduct([]);
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data.images).map((todos) => {
+          setProduct((oldArray) => [...oldArray, todos]);
+          console.log("Product",todos.profile_picture)
         });
-      });       
-    }, []);
-
-    
-    // useEffect(()=>{
-    //   let data =readUserData();
-    //   console.log("data",data)
-      
-   
-
-    // },[])
-
-  
-
+      }
+    });
+  }, []); 
     
   return (
     <div>
       <Header />
       <PhotoGrid>
-  
+        {product.map((row) => (
+        <Frame>
+          <div style={{display:"flex",flexDirection:"column"}}>
 
-{/* {data.images.map((url) => {
-  console.log("uuidd",url)
-          return (
-            <Frame>
-              {" "}
-              <img src={url.profile_picture } style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
-              
-            </Frame>
-          );
-        })} */}
 
-{imageUrls.map((url) => {
-          return (
-            <Frame>
-              {" "}
-              <img src={url} style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
-             {console.log("11",data)}
-              
-            </Frame>
-          );
-        })}  
-
-        {Object.keys(data).map((keyName, i)=>(<li> {keyName.description}</li>) )}
+          <img src={row.profile_picture} style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
+          <Title>{row.description}</Title>
+          </div>
+        </Frame>
+      ))}
       </PhotoGrid>
+
       <Footer />
     </div>
    
