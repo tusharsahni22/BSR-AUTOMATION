@@ -5,9 +5,7 @@ import ContactUs from "./Module/ContactUs/contactus";
 import Products from "./Module/Product/product";
 import Prog from "./Module/Progress";
 import Login from "./Module/Login/Login";
-// import Slide from "./Module/Main/Slidesss"
 function App() {
-
   const currentUser =true;
 
   const RequiredAuth=({children}) =>{
@@ -21,7 +19,7 @@ function App() {
         <Route path="/Products" element={<Products />} />
         <Route path="/addnewitem" element={<RequiredAuth><Prog /> </RequiredAuth>} />
         <Route path="/Login" element={<Login />} />
-        {/* <Route path="/Slide" element={<Slide />} /> */}
+
         {/* <Route path="*" element={<ContactUs />} /> */}
         
       </Routes>

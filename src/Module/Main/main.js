@@ -2,13 +2,14 @@ import React from 'react'
 import styled from "styled-components";
 import Header from "../Header/header"
 import Footer from "../Footer/footer"
+import Slides from './SlideShow/slide';
+import 'react-slideshow-image/dist/styles.css'
 
-
-const SlideShow = styled.div`
-height:300px ;
-width:100% ;
-background-color: green ;
-`;
+// const SlideShow = styled.div`
+// height:300px ;
+// width:100% ;
+// background-color: green ;
+// `;
 const CompanyLogos = styled.div`
 display: flex ;
 justify-content:space-between ;
@@ -65,12 +66,8 @@ color: white;
 function main() {
   return (
     <div>
-      <Header/>
-      <SlideShow>
-      <img src='./dcdc.jpg' alt="Logo" style={{width:"100%",height:"100%"}}></img>
-
-      </SlideShow>
-
+      <Header/>      
+      <Slides/>    
       <CompanyLogos>
         <div> <img src='./Ab.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
         <div> <img src='./Ab1.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>

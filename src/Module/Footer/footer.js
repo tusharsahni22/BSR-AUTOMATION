@@ -4,8 +4,11 @@ import styled from "styled-components";
 const Footer = styled.div`
   height: 220px;
   display: flex;
-  background-color: rgb(207, 46, 46);
+  /* background-color: rgb(207, 46, 46); */
 `;
+const Main = styled.div`
+  background-color: rgb(207, 46, 46);
+  `;
 const QuickLinks = styled.div`
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   margin: 20px 50px;
@@ -28,9 +31,21 @@ const Form = styled.div`
   margin: 20px 50px;
   color: white;
 `;
+const Line =styled.div`
+height:5px ;
+width: 80% ;
+background-color : white ;
+
+`;
+const CopyRight =styled.div`
+height:50px ;
+width: 100% ;
+/* background-color : white ; */
+`;
+
 function footer() {
   return (
-    <div>
+    <Main>
       <Footer>
         <QuickLinks>
           <h3>Quick Links</h3>
@@ -60,8 +75,12 @@ function footer() {
 
           <input placeholder="Dispriction"></input>
         </Form>
+
+        
       </Footer>
-    </div>
+      <Line></Line>
+      <CopyRight>BSR Automation</CopyRight>
+    </Main>
   );
 }
 
