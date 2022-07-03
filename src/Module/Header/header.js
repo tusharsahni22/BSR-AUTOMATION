@@ -43,10 +43,11 @@ function Headers() {
       <div style={{display:"flex"}}>
         <HeaderItems onClick={() => {navigate("/")}}> Home </HeaderItems>
         <HeaderItems  onClick={() => {navigate("/products")}}>Product</HeaderItems>
-        <HeaderItems>Company Profile</HeaderItems>
-        <HeaderItems>Project Gallery</HeaderItems>
-        <HeaderItems>About Us</HeaderItems>
-        <Contactus />
+        <HeaderItems onClick={() => {navigate("/CompanyProfile")}}>Company Profile</HeaderItems>
+        <HeaderItems onClick={() => {navigate("/ProductGallery")}}>Project Gallery</HeaderItems>
+        <HeaderItems onClick={() => {navigate("/")}}>About Us</HeaderItems>
+        <HeaderItems onClick={() => {navigate("/")}}>Contact Us</HeaderItems>
+        {/* <Contactus /> */}
        <HeaderItems>
           <Search placeholder="Search here"></Search>
         </HeaderItems>
