@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { ref, getDownloadURL, listAll } from "firebase/storage";
+import {  getDownloadURL, listAll,ref } from "firebase/storage";
 import { storage } from "../Firebase/firebase";
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import styled from "styled-components";
+import { readUserData } from "../Firebase/Database";
 
 const imagesListRef = ref(storage, "images/");
-
-const types = ["image/png", "image/jpg"];
+let data =readUserData();
 
 const PhotoGrid = styled.div`
   display: flex;
@@ -25,89 +25,69 @@ const Frame = styled.div`
   border-radius: 35px;
   border: 2px;
 `;
-const DetailText = styled.div`
-  width: 100%;
-  color: red;
-  margin: auto;
-  text-align: center;
-`;
 
 function Product() {
-//   useEffect(() => {
-//     listAll(imagesListRef).then((response) => {
-//       response.items.forEach((item) => {
-//         getDownloadURL(item).then((url) => {
-//           setImageUrls((prev) => [...prev, url]);
-//         });
-//       });
-//     });
-//   }, []);
-
-//   const [file, setFile] = useState(null);
-//   const [error, setError] = useState(null);
-
-  const [imageUpload, setImageUpload] = useState(null);
+ 
   const [imageUrls, setImageUrls] = useState([]);
+  // const [data,setData] = useState({desc:""})
 
-//   const changedHander = (e) => {
-//     let selected = e.target.files[0];
-//     if (selected && types.includes(selected.type)) {
-//       setFile(setFile);
-//       setError(null);
-//       //   console.log("file",file);
-//     } else {
-//       setFile(null);
-//       setError("Select valid image type png or jpeg");
-//       //   console.log("error",error)
-//     }
-//   };
     useEffect(() => {
+      setImageUrls([])
       listAll(imagesListRef).then((response) => {
         response.items.forEach((item) => {
           getDownloadURL(item).then((url) => {
             setImageUrls((prev) => [...prev, url]);
+
           });
         });
-      });
+      });       
     }, []);
+
+    
+    // useEffect(()=>{
+    //   let data =readUserData();
+    //   console.log("data",data)
+      
+   
+
+    // },[])
+
+  
+
+    
   return (
     <div>
       <Header />
       <PhotoGrid>
-        {imageUrls.map((url) => {
+  
+
+{/* {data.images.map((url) => {
+  console.log("uuidd",url)
+          return (
+            <Frame>
+              {" "}
+              <img src={url.profile_picture } style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
+              
+            </Frame>
+          );
+        })} */}
+
+{imageUrls.map((url) => {
           return (
             <Frame>
               {" "}
               <img src={url} style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
+             {console.log("11",data)}
+              
             </Frame>
           );
-        })}
+        })}  
 
-        {/* <Frame>
-          <img src="url" alt="product"></img>
-          <DetailText>More Details</DetailText>
-        </Frame> */}
-        {/* <Frame>
-          <img src="./logo192.png" alt="product"></img>
-        </Frame>
-        <Frame>
-          <img src="./logo192.png" alt="product"></img>
-        </Frame>
-        <Frame>
-          <img src="./logo192.png" alt="product"></img>
-        </Frame> */}
-        {/* <Frame>
-          <img src="./logo192.png" alt="product"></img>
-        </Frame> */}
+        {Object.keys(data).map((keyName, i)=>(<li> {keyName.description}</li>) )}
       </PhotoGrid>
-
-      {/* <div>Upload Photos</div>
-      <input type="file" onChange={changedHander} />
-      <div>{error}</div> */}
-      {/* <Progress file={File} setFile={setFile}/> */}
-      {/* <div>file={file} setFile{setFile}</div> */}
       <Footer />
     </div>
+   
   );
 }
 
