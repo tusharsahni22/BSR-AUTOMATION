@@ -30,7 +30,10 @@ text-align: center ;
 
 function Product() {
 
-  const [product, setProduct] = useState("");
+  const [product, setProduct] = useState({
+  "profile_picture":"hello",
+    "description":"desc"
+  });
 //Read From database
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
