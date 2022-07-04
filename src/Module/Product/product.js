@@ -46,22 +46,22 @@ function Product() {
         });
       }
     });
-  }, []); 
+  }, );
     
   return (
     <div>
       <Header />
       <PhotoGrid>
-        {product.map((row) => (
-        <Frame>
-          <div style={{display:"flex",flexDirection:"column"}}>
-
-
-          <img src={row.profile_picture} style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
-          <Title>{row.description}</Title>
-          </div>
-        </Frame>
-      ))}
+        {
+          product.map && product.map((row) => (
+              <Frame>
+                <div style={{display:"flex",flexDirection:"column"}}>
+                  <img src={row.profile_picture} style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
+                  <Title>{row.description}</Title>
+                </div>
+              </Frame>
+          ))
+        }
       </PhotoGrid>
 
       <Footer />
