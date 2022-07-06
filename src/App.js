@@ -7,6 +7,7 @@ import Prog from "./Module/Progress";
 import Login from "./Module/Login/Login";
 import CompanyProfile from "./Module/CompanyProfile/companyProfile";
 import ProductGallery from "./Module/ProductGallery/ProductGallery";
+import ForgotPassword from "./Module/Login/ForgetPassword";
 function App() {
   const currentUser =true;
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Products" element={<Products />} />
         <Route path="/addnewitem" element={<RequiredAuth><Prog /> </RequiredAuth>} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/ForgetPassword" element={<ForgotPassword />} />
         <Route path="/CompanyProfile" element={<CompanyProfile />} />
         <Route path="/ProductGallery" element={<ProductGallery />} />
 

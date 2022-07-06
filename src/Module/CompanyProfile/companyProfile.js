@@ -26,7 +26,7 @@ function CompanyProfile() {
       <Header />
       <h1>Company Profile</h1>
 
-      {todo.map((row) => (
+      {todo.map&&todo.map((row) => (
         <>
           <img src={row.profile_picture} style={{ height: "200px", width: "200px",margin:"20px" }} />{" "}
         </>
