@@ -27,9 +27,9 @@ margin: 25px ;
 
 
 const Logo =styled.img`
-height:200px ;
-margin: 0 20px 50px 0 ;
-width:100px ;
+height:300px ;
+/* margin: 0 20px 50px 0 ; */
+width:300px ;
 `;
 const Box1 =styled.img`
 height:200px ;
@@ -76,10 +76,10 @@ function main() {
       </CompanyLogos>
 
       <ProductImages>
-      <Logo src='./logo512.png' alt="Logo"></Logo>
-      <Logo src='./logo512.png' alt="Logo"></Logo>
-      <Logo src='./logo512.png' alt="Logo"></Logo>
-      <Logo src='./logo512.png' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
       </ProductImages>
       <ViewAll>Show More</ViewAll>
         <h3>Our Services</h3>

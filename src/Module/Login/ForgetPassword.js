@@ -42,7 +42,7 @@ background: linear-gradient(to right, #14163c 0%, #03217b 79%);
   `;
 
   const Background=styled.div`
-  background-image: url("./dcdc.jpg");
+  background-image: url("./background.jpg");
   height: 100vh ;
   width: 100% ;
   padding-top: 100px;
@@ -50,12 +50,14 @@ background: linear-gradient(to right, #14163c 0%, #03217b 79%);
   `;
 
 
-function Login() {
+function ForgotPassword() {
   const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
     const [error,setError]=useState(false)
     const Navigate =useNavigate()
-    const OnLoginHandle = (e)=>{
+
+
+    const OnForgetHandle = (e)=>{
         e.preventDefault();
         signInWithEmailAndPassword(Auth, email, password)
       .then((userCredential) => {
@@ -67,8 +69,7 @@ function Login() {
         // ...
       })
       .catch((error) => {
-        // errorCode = error.code;
-        // errorMessage = error.message;
+       
         setError(true)
       });
     
@@ -76,18 +77,18 @@ function Login() {
   return (
       <Background>
     <MainContainer>
-      <WelcomeText>Welcome</WelcomeText>
+      <WelcomeText>Reset Password</WelcomeText>
       <InputContainer>
         <Input type="text" placeholder="Email" onChange={(e) =>setEmail(e.target.value)} />
-        <Input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
       </InputContainer>
       <ButtonContainer>
-        <Button onClick={OnLoginHandle}>Login</Button>
+        <Button onClick={OnForgetHandle}>Forget Password</Button>
         
       </ButtonContainer>
-      <LoginWith>{error && <div>Wrong Email or Password</div>}</LoginWith>
+      <LoginWith>{error && <div>Wrong Email or Username</div>}</LoginWith>
       <HorizontalRule />
-      <ForgotPassword onClick={() => {Navigate("/forgetPassword")}}>Forgot Password ?</ForgotPassword>
+      <Login onClick={() => {Navigate("/login")}}>Login</Login>
+      {/* <ForgotPassword>Forgot Password ?</ForgotPassword> */}
     </MainContainer>
       </Background>
   );
@@ -187,8 +188,8 @@ const IconsContainer = styled.div`
   width: 80%;
 `;
 
-const ForgotPassword = styled.h4`
+const Login = styled.h4`
   cursor: pointer;
 `;
 
-export default Login;
+export default ForgotPassword;
