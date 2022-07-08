@@ -14,11 +14,13 @@ const Logo =styled.div``;
 const BSRLOGO =styled.img`
 height: 60px;
 @media (max-width:768px){
-    height: 20px ;
+    height: 40px ;
+    margin: 5px ;
 }
 
 `;
 const Menu=styled.img`
+margin-right: 5px ;
 
 @media (min-width:768px){
     display:none;
