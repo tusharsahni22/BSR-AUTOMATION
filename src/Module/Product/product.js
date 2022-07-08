@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { storage } from "../Firebase/firebase";
-import Header from "../Header/header";
+import Header from "../Header/headerreplaced";
 import Footer from "../Footer/footer";
 import styled from "styled-components";
 import { readUserData } from "../Firebase/Database";

@@ -1,59 +1,77 @@
-import React from "react";
+import { display } from '@mui/system';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import SideBarr from './SideBar';
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import Contactus from "../ContactUs/contactus";
 
-const Header = styled.div`
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  display: flex;
-  justify-content: space-between;
-  background-color: black;
-  color: red;
-  height: 80px;
+const MainContainer =styled.div`
+display: flex ;
+justify-content:space-between ;
+background-color: black ;
+color: red ;
 `;
-const HeaderItems = styled.button`
+const Logo =styled.div``;
+const BSRLOGO =styled.img`
+height: 60px;
+@media (max-width:768px){
+    height: 20px ;
+}
+
+`;
+const Menu=styled.img`
+
+@media (min-width:768px){
+    display:none;
+    }
+`;
+const Link=styled.div`
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  background-color: black;
+  /* background-color: black; */
   color: red;
   border: none;
   margin: 15px;
   font-size: 18px;
+@media (max-width:768px){
+    display:none;
+    }
 `;
-const Search =styled.input`
-height: "20px";
- margin: "30px";
- outline:"none";
+const SideBar =styled.div`
+background-color:black;
+color:red;
+width: 400px ;
+margin-top: 50px ;
+height: 100vh ;
 `;
+const Container =styled.div`
 
-const Logo = styled.img`
-  height: 60px;
-  /* width:20px ; */
 `;
-
-function Headers() {
-  //   const handleClick = (route) => {
-  //     navigate(route);
-  // }
-  const navigate = useNavigate();
+function Header() {
+    const navigate = useNavigate();
+    const [SideBar,setSideBar] =useState(false)
+    const openSideBar =()=>{
+        setSideBar(!SideBar)
+        console.log("first",SideBar)
+    }
   return (
-    <Header>
-      <div style={{ marginLeft: "20px", marginTop: "10px" }}>
-        <Logo src="./bsr.png" alt="Logo"></Logo>
-      </div>
-      <div style={{display:"flex"}}>
-        <HeaderItems onClick={() => {navigate("/")}}> Home </HeaderItems>
-        <HeaderItems  onClick={() => {navigate("/products")}}>Product</HeaderItems>
-        <HeaderItems onClick={() => {navigate("/CompanyProfile")}}>Company Profile</HeaderItems>
-        <HeaderItems onClick={() => {navigate("/ProductGallery")}}>Project Gallery</HeaderItems>
-        <HeaderItems onClick={() => {navigate("/")}}>About Us</HeaderItems>
-        <HeaderItems onClick={() => {navigate("/")}}>Contact Us</HeaderItems>
-        {/* <Contactus /> */}
-       <HeaderItems>
-          <Search placeholder="Search here"></Search>
-        </HeaderItems>
-      </div>
-    </Header>
-  );
+    <Container>
+    <MainContainer>
+        <Logo><BSRLOGO src="./bsr.png" alt="Logo" onClick={() => {navigate("/")}}></BSRLOGO></Logo>
+        <div style={{marginRight:"20px",display:"flex"}}>
+        <Link onClick={() => {navigate("/")}}>Home </Link>
+        <Link onClick={() => {navigate("/products")}}>Product</Link>
+        <Link onClick={() => {navigate("/CompanyProfile")}}>Company Profile</Link>
+        <Link onClick={() => {navigate("/ProductGallery")}}>Project Gallery</Link>
+        <Link onClick={() => {navigate("/aboutus")}}>About Us</Link>
+        <Link onClick={() => {navigate("/contactus")}}>Contact</Link>
+        </div>
+        <Menu src="./white-menu.svg" onClick={openSideBar} alt="Logo"/>         
+    </MainContainer>
+    <div style={{display:"flex",justifyContent:"space-between"}}>
+        <div></div>        
+        {SideBar ? <SideBarr/>:""} 
+    </div>
+    </Container>
+  )
 }
 
-export default Headers;
+export default Header

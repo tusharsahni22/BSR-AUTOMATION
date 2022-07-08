@@ -1,15 +1,12 @@
 import React from 'react'
 import styled from "styled-components";
-import Header from "../Header/header"
+// import Header from "../Header/headerreplaced"
 import Footer from "../Footer/footer"
 import Slides from './SlideShow/slide';
+import Header from '../Header/header';
 import 'react-slideshow-image/dist/styles.css'
+import SideBarr from '../Header/SideBar';
 
-// const SlideShow = styled.div`
-// height:300px ;
-// width:100% ;
-// background-color: green ;
-// `;
 const CompanyLogos = styled.div`
 display: flex ;
 justify-content:space-between ;
@@ -22,10 +19,6 @@ display:flex ;
 justify-content:space-between ;
 margin: 25px ;
 `;
-
-
-
-
 const Logo =styled.img`
 height:300px ;
 /* margin: 0 20px 50px 0 ; */
@@ -45,7 +38,6 @@ const Box3 =styled.img`
 height:200px ;
 margin: 0 20px 50px 0 ;
 width:100%
-
 `;
 const OurServices = styled.div``;
 
@@ -54,7 +46,6 @@ height:200px ;
 margin: 0 20px 50px 0 ;
 width:100%
 `;
-
 const ViewAll =styled.button`
 font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 border: none ;
@@ -63,48 +54,18 @@ background-color: red;
 width:100%;
 color: white;
 `;
-function main() {
+function Main(props) {
   return (
     <div>
-      <Header/>      
-      <Slides/>    
-      <CompanyLogos>
-        <div> <img src='./Ab.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
-        <div> <img src='./Ab1.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
-        <div><img src='./Parker1-.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
-        <div><img src='./Parker.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
-      </CompanyLogos>
-
-      <ProductImages>
-      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
-      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
-      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
-      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
-      </ProductImages>
-      <ViewAll>Show More</ViewAll>
-        <h3>Our Services</h3>
-      <OurServices>
-      <div  style={{justifyContent: "space-between",display:"flex"}} >
-      <Box1 src='./logo512.png' alt="Logo"></Box1>
-      <Box2 src='./logo512.png' alt="Logo"></Box2>
-      </div >
-      <div style={{justifyContent: "space-between",display:"flex"}}>
-      <Box3 src='./logo512.png' alt="Logo"></Box3>
-      <Box4 src='./logo512.png' alt="Logo"></Box4>
-
-      </div>
-
-
-
-      </OurServices>
-      <Footer/>
-
+      <Header/>
       
-
-
-
-    </div>
+      <Slides/>
+       
+      
+    
+      
+      </div>
   )
 }
 
-export default main
+export default Main
