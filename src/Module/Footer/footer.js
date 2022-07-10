@@ -170,7 +170,7 @@ const Icons = styled.div`
   position: relative;
   display: flex;
   -webkit-box-pack: justify;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   -webkit-box-align: center;
   align-items: center;
 `;
@@ -192,8 +192,6 @@ function footer() {
       <ContactUs>
         <Contact>CONTACT WITH US</Contact>
         <ParaContact>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-          voluptates, temporibus at, facere harum fugiat!
         </ParaContact>
       </ContactUs>
       <AddressDiv>
@@ -204,8 +202,9 @@ function footer() {
             />
             <div>
               <H4>Address:</H4>
-              <P>Mohan nagar</P>
-              <P>Ghaziabad</P>
+              <P>Shop No. GF-2/643 </P>
+              <P>Sector 2B Vashundhra</P>
+              <P>Ghaziabad UP-201012</P>
             </div>
           </Details>
 
@@ -215,8 +214,8 @@ function footer() {
             />
             <div>
               <H4>TelePhone:</H4>
-              <P>Mohan nagar</P>
-              <P>Ghaziabad</P>
+              <P>+91 9910268735</P>
+              <P>+91 7503980590</P>
             </div>
           </Details>
 
@@ -227,7 +226,7 @@ function footer() {
             <div>
               <H4>E-mail:</H4>
               <P>BsrAutomation17@gmail.com</P>
-              <P>BsrAutomation17@gmail.com</P>
+              {/* <P>BsrAutomation17@gmail.com</P> */}
             </div>
           </Details>
         </Address>
@@ -248,23 +247,19 @@ function footer() {
       </AddressDiv>
 
       <SocialMedia>
-        <Desc>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id corrupti
-          architecto consequuntur, laborum quaerat sed nemo temporibus unde,
-          beatae vel.
-        </Desc>
+        <Desc>Manufacture of Main L.T. Panel Distribution Board, Cable Tray, & Bus Ducts, Control Panel, PLC Panel, AC/DC Drive Control Panel, Rotogravure Printing Machine, AC/DC Drive Repairs, AC/DC Drive Installation & Commissioning and Programing.</Desc>
         <Icons>
-          <FaFacebookF />
-          <FaInstagram />
-          <FaTwitter />
-          <SiGmail />
+          <FaFacebookF style={{padding:"0 10px"}} />
+          <FaInstagram style={{padding:"0 10px"}}/>
+          <FaTwitter style={{padding:"0 10px"}}/>
+          <SiGmail  style={{padding:"0 10px"}}/>
         </Icons>
       </SocialMedia>
 
       <CopyRight>
         <p>
           <p>
-            © Copyright 2022 BSRAutomation all right reserved. Designed by
+            © Copyright 2022 BSR Automation all right reserved. Designed by
             Tushar Sahni
           </p>
         </p>
