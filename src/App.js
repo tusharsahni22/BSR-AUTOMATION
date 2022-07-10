@@ -9,6 +9,7 @@ import CompanyProfile from "./Module/CompanyProfile/companyProfile";
 import ProductGallery from "./Module/ProductGallery/ProductGallery";
 import ForgotPassword from "./Module/Login/ForgetPassword";
 import Footer from "./Module/Footer/footer";
+import AboutUs from "./Module/AboutUs/AboutUs";
 function App() {
   const currentUser =true;
 
@@ -26,7 +27,7 @@ function App() {
         <Route path="/ForgetPassword" element={<ForgotPassword />} />
         <Route path="/CompanyProfile" element={<CompanyProfile />} />
         <Route path="/ProductGallery" element={<ProductGallery />} />
-        <Route path="/Footer" element={<Footer />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
 
         {/* <Route path="*" element={<ContactUs />} /> */}
         
