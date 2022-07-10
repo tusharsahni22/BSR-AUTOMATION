@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { useNavigate } from "react-router-dom";
 import {AiOutlineHome,AiOutlineShopping,AiOutlineProfile,AiOutlineFundProjectionScreen,AiOutlineContacts} from "react-icons/ai"
 import {SiAboutdotme} from "react-icons/si"
-import {GrContact} from "react-icons/gr"
 
 const Link=styled.div`
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -23,7 +22,7 @@ const SideBar =styled.div`
 background-color:black;
 color:red;
 width: 40% ;
-height: 100vh ;
+height: 35vh ;
 position:absolute;
 left: 60%;
 z-index:1 ;
