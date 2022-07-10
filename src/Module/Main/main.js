@@ -62,7 +62,7 @@ const BrandLogo = styled.img`
     height: 40px;
   }
 `;
-function Main(props) {
+function Main() {
   return (
     <div>
       <Header />
