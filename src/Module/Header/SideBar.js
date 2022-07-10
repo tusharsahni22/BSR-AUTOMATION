@@ -4,11 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 const Link=styled.div`
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  /* background-color: black; */
   color: red;
   border: none;
   margin: 15px;
-  font-size: 7px;
+  font-size: 10px;
 `;
 
 const SideBar =styled.div`

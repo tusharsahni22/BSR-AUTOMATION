@@ -57,12 +57,37 @@ color: white;
 function Main(props) {
   return (
     <div>
-      <Header/>
-      
+      <Header/>      
       <Slides/>
-       
-      
-    
+      <CompanyLogos>
+        <div> <img src='./Ab.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
+        <div> <img src='./Ab1.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
+        <div><img src='./Parker1-.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
+        <div><img src='./Parker.png' alt="Logo" style={{height:"60px",marginTop:"25px"}}></img> </div>
+      </CompanyLogos>
+
+      <ProductImages>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      <Logo src='https://firebasestorage.googleapis.com/v0/b/bsr-automation.appspot.com/o/images%2F110886cb-f506-45c4-a4cc-196b34d8ef33?alt=media&token=c66f63b7-b2fb-4e88-b38c-c7ae90618c42' alt="Logo"></Logo>
+      </ProductImages>
+      <ViewAll>Show More</ViewAll>
+        <h3>Our Services</h3>
+      <OurServices>
+      <div  style={{justifyContent: "space-between",display:"flex"}} >
+      <Box1 src='./logo512.png' alt="Logo"></Box1>
+      <Box2 src='./logo512.png' alt="Logo"></Box2>
+      </div >
+      <div style={{justifyContent: "space-between",display:"flex"}}>
+      <Box3 src='./logo512.png' alt="Logo"></Box3>
+      <Box4 src='./logo512.png' alt="Logo"></Box4>
+      </div>
+
+
+
+      </OurServices>
+      <Footer/>    
       
       </div>
   )

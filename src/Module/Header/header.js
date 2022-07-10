@@ -33,16 +33,12 @@ const Link=styled.div`
   border: none;
   margin: 15px;
   font-size: 18px;
+  &:hover {
+    color: white;
+  }
 @media (max-width:768px){
     display:none;
     }
-`;
-const SideBar =styled.div`
-background-color:black;
-color:red;
-width: 400px ;
-margin-top: 50px ;
-height: 100vh ;
 `;
 const Container =styled.div`
 

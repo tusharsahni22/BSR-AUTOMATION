@@ -1,87 +1,234 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import { FaFacebookF ,FaInstagram ,FaTwitter,FaAddressCard } from 'react-icons/fa';
+import {SiGmail} from "react-icons/si"
+import {MdEmail} from "react-icons/md"
+import {FiPhoneCall} from "react-icons/fi"
 
-const Footer = styled.div`
-  height: 220px;
-  display: flex;
-  /* background-color: rgb(207, 46, 46); */
+const MainContainer =styled.div`
+background: linear-gradient(rgb(117, 203, 231) 0%, rgb(19, 143, 194) 100%);
+height: 100% ;
+color: rgb(255, 255, 255);
+font-family: Poppins,sans-serif;
 `;
-const Main = styled.div`
-  background-color: rgb(207, 46, 46);
-  `;
-const QuickLinks = styled.div`
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  margin: 20px 50px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  color: white;
+const ContactUs=styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 150px 0 80px;
 `;
-
-const ContactUs = styled.div`
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  margin: 20px 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  color: white;
+const Contact=styled.div`
+font-size: 28px;
+font-weight: 600;
+position: relative;
 `;
-const Form = styled.div`
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  margin: 20px 50px;
-  color: white;
-`;
-const Line =styled.div`
-height:5px ;
-width: 80% ;
-background-color : white ;
+const AddressDiv=styled.div`
+justify-content: space-between;
+display: flex;
 
 `;
-const CopyRight =styled.div`
-height:50px ;
+
+const Address=styled.div`
+margin: 0 15px ;
+
+
+`;
+
+const ContactForm=styled.div`
+width: 100%;
+margin: 0 100px;
+`;
+const Details=styled.div`
+display: flex ;
+margin-bottom: 30px;
+`;
+const Logo=styled.img`
+margin-right: 30px ;
+height: 70px ;
+width:70px ;
+`;
+const H4=styled.h4`
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins,sans-serif;
+    font-size: 16px;
+    padding-bottom: 6px;
+    font-weight: bold ;
+`;
+const P=styled.p`
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins,sans-serif;
+`;
+const ParaContact=styled.p``;
+
+const EmailName=styled.div`
+display:flex ;
+justify-content:space-between ;
+
+
+`;
+const Input =styled.input`
+width: 100%;
+margin-bottom: 24px;
+padding: 12px 20px;
+border: none;
+outline: none;
+box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px inset;
+border-radius: 4px;
+resize: none;
+color: rgb(85, 85, 85);
+`;
+const InputName =styled.input`
+width: 48% ;
+margin-bottom: 24px;
+padding: 12px 20px;
+border: none;
+outline: none;
+box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px inset;
+border-radius: 4px;
+resize: none;
+color: rgb(85, 85, 85);
+`;
+const InputEmail =styled.input`
+width: 48% ;
+margin-bottom: 24px;
+padding: 12px 20px;
+border: none;
+outline: none;
+box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px inset;
+border-radius: 4px;
+resize: none;
+color: rgb(85, 85, 85);
+`;
+const InputMessage =styled.input`
 width: 100% ;
-/* background-color : white ; */
+margin-bottom: 24px;
+padding: 12px 20px;
+border: none;
+outline: none;
+box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px inset;
+border-radius: 4px;
+resize: none;
+color: rgb(85, 85, 85);
+height: 160px ;
 `;
+const Message=styled.div``;
+const MessageTopic=styled.div``;
+const Submit=styled.button`
+border: none ;
+background: rgb(47, 96, 195);
+color: rgb(255, 255, 255);
+border-radius: 4px;
+padding: 11px 43px;
+letter-spacing: 1.3px;
+margin: 0px;
+`;
+const SMIcons=styled.div``;
+const SocialMedia=styled.div`
+display:flex;
+justify-content:space-between ;
+margin: 100px 10px ;
+`;
+const Desc=styled.div`
+padding:60px 0px
+`;
+const Icons=styled.div`
+width: 100%;
+    padding: 60px 0px;
+    margin: 0px auto;
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    align-items: center;
+    `;
+  const CopyRight =styled.div`
+  width: 100%;
+    padding: 28px 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: relative;
+  `;
 
 function footer() {
   return (
-    <Main>
-      <Footer>
-        <QuickLinks>
-          <h3>Quick Links</h3>
-          <div>Home</div>
-          <div>Product</div>
-          <div>Company Profile</div>
-          <div>Project Gallery</div>
-        </QuickLinks>
+    <MainContainer>
 
-        <ContactUs>
-          <h3>Contact Us</h3>
-          <div>Address</div>
-          <div>Mobile no</div>
-          <div>Email id</div>
-          <div>insta fb</div>
-        </ContactUs>
-        <Form>
-          <h3>Enquiry</h3>
+    <ContactUs>
+      <Contact>CONTACT WITH US</Contact>
+      <ParaContact>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</ParaContact>
+    </ContactUs>
+    <AddressDiv>
 
-          <input placeholder="Name"></input>
+      <Address>
+        <Details>
+        <FaAddressCard style={{marginRight:"30px",width:"70px",height:"70px"}}/>
+        <div>
+          <H4>Address:</H4>
+          <P>Mohan nagar</P>
+          <P>Ghaziabad</P>
+        </div>
+        </Details>
 
-          <input placeholder="Email Id"></input>
+        <Details>
+        <FiPhoneCall style={{marginRight:"30px",width:"70px",height:"70px"}}/>
+        <div>
+          <H4>TelePhone:</H4>
+          <P>Mohan nagar</P>
+          <P>Ghaziabad</P>
+        </div>
+        </Details>
 
-          <input placeholder="Mobile No."></input>
-
-          <input placeholder="Subject-Product Name"></input>
-
-          <input placeholder="Dispriction"></input>
-        </Form>
-
+        <Details>
+        <MdEmail style={{marginRight:"30px",width:"70px",height:"70px"}}/>
+        <div>
+          <H4>E-mail:</H4>
+          <P>BsrAutomation17@gmail.com</P>
+          <P>BsrAutomation17@gmail.com</P>
+        </div>
+        </Details>
         
-      </Footer>
-      <Line></Line>
-      <CopyRight>BSR Automation</CopyRight>
-    </Main>
-  );
+      </Address>
+      <ContactForm>
+        <EmailName>
+          <InputName placeholder='You Name'/>
+          <InputEmail placeholder='Email Addesss'/>
+        </EmailName>
+        
+        <MessageTopic>
+        <Input placeholder='Message Topic'/>
+        </MessageTopic>
+        <Message>
+          <InputMessage placeholder='Your Message'/>
+        </Message>
+        <Submit>Submit</Submit>
+      </ContactForm>
+
+    </AddressDiv>
+
+    <SocialMedia>
+        <Desc>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id corrupti architecto consequuntur, laborum quaerat sed nemo temporibus unde, beatae vel.</Desc>
+        <Icons>
+
+        <FaFacebookF/>      
+        <FaInstagram/>
+        <FaTwitter/>
+        <SiGmail/>
+        </Icons>
+        </SocialMedia>
+
+        <CopyRight>
+        <p><p>© Copyright 2022 BsrAutomation all right reserved. Designed by Tushar Sahni</p></p>
+        </CopyRight>
+
+    </MainContainer>
+  )
 }
 
-export default footer;
+export default footer
