@@ -69,9 +69,9 @@ function Main() {
       <Slides />
       <CompanyLogos>
         <BrandLogo src="./Ab.png" alt="Logo" />
-        <BrandLogo src="./Ab1.png" alt="Logo" />
+        <BrandLogo src="./ab1.png" alt="Logo" />
         <BrandLogo src="./Ab.png" alt="Logo" />
-        <BrandLogo src="./Ab1.png" alt="Logo" />
+        <BrandLogo src="./ab1.png" alt="Logo" />
       </CompanyLogos>
 
       <ProductImages>
